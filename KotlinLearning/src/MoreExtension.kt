@@ -39,7 +39,21 @@ fun moreextension() {
 
     var t = null
     println(t.toString())
+
+    println("no:${MyClass.no}")
+    MyClass.foo()
 }
+
+class MyClass {
+    companion object { }  // 将被称为 "Companion"
+}
+
+fun MyClass.Companion.foo() {
+    println("伴随对象的扩展函数")
+}
+
+val MyClass.Companion.no: Int
+    get() = 10
 
 
 // 扩展函数 swap,调换不同位置的值
